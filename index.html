@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sticky Navbar</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Accueil</title>
-        <link rel="stylesheet" href="./styles/style.css">
-        <link rel="icon" href="./assets/img/logo.ico">
-    </head>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-toggle" id="menu-toggle">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </div>
+            <div class="navbar-links" id="navbar-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-    <body>
-        <h1>Welcome world !</h1>
-        <a href="./pages/projects.html">Mes projets</a>
-    </body>
+    <div class="content">
+        <h1>Welcome to My Personal Website</h1>
+        <p>This is a simple responsive navbar example.</p>
+    </div>
 
     <script src="./scripts/script.js"></script>
+
+</body>
 </html>
