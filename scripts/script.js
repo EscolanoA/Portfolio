@@ -1,8 +1,25 @@
-// Get the hamburger icon and navbar links
-const menuToggle = document.getElementById('menu-toggle');
-const navbarLinks = document.getElementById('navbar-links');
+function switchTextWithDelay(delay) {
+    const texts = ["BIENVENUE ( 0_0)", "BIENVENUE ( ^_^)", "BIENVENUE ( ^_^) /", "BIENVENUE ( ^_^) |", "BIENVENUE ( ^_^) /", "BIENVENUE ( ^_^)", "BIENVENUE ( 0_0)"];
+    const textContainer = document.getElementById("emoji")
 
-// Add event listener to toggle the mobile menu
-menuToggle.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active'); // Toggle the active class to show/hide menu
-});
+    textContainer.innerHTML = "BIENVENUE ( 0_0)"
+
+    let index = 0;
+
+    setInterval(() => {
+        textContainer.textContent = texts[index];
+        index = (index + 1) % texts.length;
+    }, delay);
+}
+
+switchTextWithDelay(500);
+
+let pcnavbar = document.getElementById("pcnavbar")
+
+window.addEventListener('scroll',() => {
+    if (window.scrollY > 0) {
+        pcnavbar.classList.add('scrolled')
+    } else {
+        pcnavbar.classList.remove('scrolled')
+    }
+})
