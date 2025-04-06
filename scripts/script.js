@@ -43,8 +43,8 @@ menubutton.addEventListener('click', () => {
         menubutton.classList.remove("spinOpen")
         menubutton.classList.add("spinClose")
 
-        menubutton.classList.remove("close")
         menubutton.classList.add("open")
+        menubutton.classList.remove("close")
 
         extendframe.classList.remove("extended")
 
