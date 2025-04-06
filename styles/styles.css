@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
 * {
     margin: 0;
@@ -10,7 +11,7 @@
 
 body {
     height: 10000px;
-    background-color: rgb(48, 48, 48);
+    background-color: rgb(0, 0, 0);
 }
 
 .pcnavbar {
@@ -28,7 +29,7 @@ body {
 }
 
 .pcnavbar.scrolled {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .pcnavbar .left, .pcnavbar .right {
@@ -43,7 +44,7 @@ body {
 }
 
 .pcnavbar .center a {
-    color: black;
+    color: white;
     font-weight: bold;
     text-decoration: none;
     position: relative;
@@ -85,7 +86,7 @@ body {
     position: absolute;
     white-space: nowrap;
     margin: 0;
-    color: black;
+    color: white;
 }
 
 .pcnavbar .left .holdertext {
@@ -94,7 +95,7 @@ body {
 
 .pcnavbar .right a {
     margin: clamp(0.25rem, 0.5vh, 0.5rem) clamp(0.5rem, 0.75vw, 1rem);
-    color: black;
+    color: white;
     font-weight: bold;
     text-decoration: none;
     position: relative;
@@ -152,7 +153,7 @@ body {
     }
     
     .mobilenavbar.scrolled {
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(0, 0, 0, 0.3);
     }
     
     .mobilenavbar .left, .mobilenavbar .right {
@@ -210,6 +211,7 @@ body {
         position: absolute;
         white-space: nowrap;
         margin: 0;
+        color: white;
     }
     
     .mobilenavbar .left .holdertext {
@@ -224,10 +226,12 @@ body {
         height: 1.5rem;
         width: 1.5rem;
         cursor: pointer;
+        filter: brightness(0) invert(1);
     }
 
     .mobilenavbar .menubutton.close {
         background-image: url(../assets/img/closeicon.png);
+        filter: brightness(0) invert(0);
     }
 
     .mobilenavbar .menubutton.open {
@@ -341,8 +345,29 @@ body {
     }
 }
 
-.introframe {
+.video {
     width: 100%;
     height: 100svh;
-    background-color: rgb(206, 206, 206);
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    rotate: 180deg;
+}
+
+.videobackground {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.contentframe {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Chakra Petch', sans-serif;
 }
