@@ -20,7 +20,8 @@ body {
     align-items: center;
     justify-content: space-between;
     font-size: clamp(0.375rem, 1.5vw + 0.1rem, 1.5rem);
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 999;
     padding: 0 2rem;
@@ -84,6 +85,7 @@ body {
     position: absolute;
     white-space: nowrap;
     margin: 0;
+    color: black;
 }
 
 .pcnavbar .left .holdertext {
@@ -109,9 +111,6 @@ body {
 
 .mobilenavbar {
     display: none;
-}
-.mobilenavbar.scrolled {
-    background-color: rgb(255, 255, 255);
 }
 
 .extendframe .top, .extendframe .center, .extendframe .bottom {
@@ -145,7 +144,8 @@ body {
         align-items: center;
         justify-content: space-between;
         font-size: clamp(0.375rem, 1.5vw + 0.5rem, 1.5rem);
-        position: sticky;
+        position: fixed;
+        width: 100%;
         top: 0;
         z-index: 999;
         padding: 0 2rem;
@@ -255,13 +255,14 @@ body {
     }
 
     .extendframe {
+        z-index: 998;
         background-color: rgb(255, 255, 255);
         position: fixed;
         top: 0;
         left: 0;
         height: 0px;
         transition: height 0.75s ease;
-        width: 100vw;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -269,7 +270,7 @@ body {
         font-family: 'Chakra Petch', sans-serif;
     }
     .extendframe.extended {
-        height: 100vh;
+        height: 100%;
     }
 
     .extendframe .top, .extendframe .center, .extendframe .bottom {
@@ -338,4 +339,10 @@ body {
         transform: scaleX(1);
         transform-origin: left;
     }
+}
+
+.introframe {
+    width: 100%;
+    height: 100svh;
+    background-color: rgb(206, 206, 206);
 }
