@@ -17,7 +17,7 @@ body {
 
 .pcnavbar {
     background-color: rgba(134, 134, 134, 0);
-    transition: background-color 0.5s ease;
+    transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,7 +30,8 @@ body {
 }
 
 .pcnavbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.08);
+    border-bottom: solid white;
+    background-color: black;
 }
 
 .pcnavbar .left, .pcnavbar .right {
@@ -142,7 +143,7 @@ body {
 
     .mobilenavbar {
         background-color: rgba(134, 134, 134, 0);
-        transition: background-color 0.5s ease;
+        transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -155,7 +156,8 @@ body {
     }
     
     .mobilenavbar.scrolled {
-        background-color: rgba(255, 255, 255, 0.08);
+        border-bottom: solid white;
+        background-color: black;
     }
     
     .mobilenavbar .left, .mobilenavbar .right {
@@ -346,6 +348,10 @@ body {
         transform: scaleX(1);
         transform-origin: left;
     }
+
+    .flashlight {
+        display: none;
+    }
 }
 
 .maintitleframe {
@@ -357,12 +363,25 @@ body {
     align-items: center;
 }
 
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .title {
     color: white;
     font-size: clamp(1rem, 1.5vw + 1rem, 5rem);
     margin: clamp(0.25rem, 0.5vh + 0.25rem, 0.5rem) clamp(0.5rem, 0.75vw + 0.25rem, 1rem);
     text-align: center;
     z-index: 1;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards;
 }
 
 .subtitle {
@@ -371,6 +390,8 @@ body {
     margin: clamp(0.25rem, 0.5vh + 0.25rem, 0.5rem) clamp(0.5rem, 0.75vw + 0.25rem, 1rem);
     text-align: center;
     z-index: 1;
+    animation: slideUp 1s ease-out 0.5s forwards;
+    opacity: 0;
 }
 
 .maintitlebuttongroup {
@@ -380,10 +401,32 @@ body {
     z-index: 1;
 }
 
-#colorbuttonorange{background-color:rgb(255, 136, 0);}
-#colorbuttonblue{background-color:rgb(0, 247, 255);}
-#colorbuttongreen{background-color:rgb(0, 255, 0);}
-#colorbuttonpurple{background-color:rgb(174, 0, 255);}
+@keyframes slidefromleft {
+    0% {
+        opacity: 0;
+       transform: translateX(-35vw); 
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}
+
+@keyframes slidefromright {
+    0% {
+        opacity: 0;
+       transform: translateX(35vw); 
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}
+
+#colorbuttonorange{background-color:rgb(255, 136, 0); opacity: 0; animation: slidefromleft 1s cubic-bezier(.74,.08,.4,1.04) 1.8s forwards; z-index: 3;}
+#colorbuttonblue{background-color:rgb(0, 247, 255); opacity: 0; animation: slidefromleft 1s cubic-bezier(.74,.08,.4,1.04) 1s forwards; z-index: 3;}
+#colorbuttongreen{background-color:rgb(0, 255, 0); opacity: 0; animation: slidefromright 1s cubic-bezier(.74,.08,.4,1.04) 1.4s forwards; z-index: 3;}
+#colorbuttonpurple{background-color:rgb(174, 0, 255); opacity: 0; animation: slidefromright 1s cubic-bezier(.74,.08,.4,1.04) 2.2s forwards; z-index: 3;}
 
 .maintitlebuttongroup button {
     width: clamp(1rem, 2.5vw + 0.8rem, 3.8rem);
@@ -489,3 +532,22 @@ body {
   .orbit8 span {background-image: url(../assets/img/python-original-wordmark.svg); transition: transform 1s ease;}
   .orbit9 span {background-image: url(../assets/img/php-original.svg); transition: transform 1s ease;}
   .orbit10 span {background-image: url(../assets/img/sqldeveloper-original.svg); transition: transform 1s ease;}
+
+  .flashlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: clamp(10rem, 10vw + 10rem, 50rem);
+    height: clamp(10rem, 10vw + 10rem, 50rem);
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(
+      circle closest-side, 
+      rgba(255, 136, 0, 0.1) 0%,
+      rgba(255, 136, 0, 0.05) 60%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    mix-blend-mode: screen;
+  }

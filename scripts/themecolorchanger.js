@@ -8,6 +8,19 @@ function recolorelements() {
     let targetColor = window.getComputedStyle(document.getElementById("animatedtext")).color
     const allElements = document.querySelectorAll('*');
   
+    let newColorRgb = newColor.match(/\d+/g).join(', ');
+  
+    const flashlight = document.querySelector('.flashlight');
+    
+    if (flashlight) {
+      flashlight.style.background = `radial-gradient(
+        circle closest-side, 
+        rgba(${newColorRgb}, 0.1) 0%,
+        rgba(${newColorRgb}, 0.05) 60%,
+        rgba(0, 0, 0, 0.6) 100%
+      )`;
+    }
+  
     allElements.forEach(el => {
       const styles = window.getComputedStyle(el);
       const textShadow = styles.textShadow;

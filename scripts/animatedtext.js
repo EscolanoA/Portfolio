@@ -1,15 +1,15 @@
 let animatedtext = document.getElementById("animatedtext");
 
 const words = [
-  "un ninja du JavaScript",
-  "un pro du CSS",
+  "un ninja du JavaScript.",
+  "un pro du CSS.",
   "un grand fan de PHP...!",
-  "un athlete de compétition",
-  "un manique du C#",
-  "un musicien auto-didacte",
-  "un developpeur back-end",
-  "un developpeur front-end",
-  "un developpeur fullstack"
+  "un athlete de compétition.",
+  "un manique du C#.",
+  "un musicien auto-didacte.",
+  "un developpeur back-end.",
+  "un developpeur front-end.",
+  "un developpeur fullstack."
 ];
 
 function writedeleteRandomWord(wordList, speed) {
