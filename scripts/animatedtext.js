@@ -5,7 +5,7 @@ const words = [
   "un pro du CSS.",
   "un grand fan de PHP...!",
   "un athlete de compétition.",
-  "un manique du C#.",
+  "un maniaque du C#.",
   "un musicien auto-didacte.",
   "un developpeur back-end.",
   "un developpeur front-end.",

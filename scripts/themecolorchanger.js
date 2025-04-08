@@ -33,6 +33,10 @@ function recolorelements() {
       if (styles.color === targetColor) {
         el.style.color = newColor;
       }
+
+      if (styles.borderBottomColor === targetColor) {
+        el.style.borderBottomColor = newColor;
+      }
     });
 }
 

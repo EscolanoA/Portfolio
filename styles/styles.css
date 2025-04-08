@@ -30,7 +30,7 @@ body {
 }
 
 .pcnavbar.scrolled {
-    border-bottom: solid white;
+    border-bottom: solid rgb(255, 136, 0);
     background-color: black;
 }
 
@@ -142,7 +142,7 @@ body {
     }
 
     .mobilenavbar {
-        background-color: rgba(134, 134, 134, 0);
+        background-color: rgb(0, 0, 0);
         transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
         display: flex;
         align-items: center;
@@ -156,7 +156,7 @@ body {
     }
     
     .mobilenavbar.scrolled {
-        border-bottom: solid white;
+        border-bottom: solid rgb(255, 136, 0);
         background-color: black;
     }
     
@@ -438,6 +438,7 @@ body {
 
 .animatedtext {
     color: rgb(255, 136, 0);
+    transition: color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
     text-shadow:
       0 0 5px rgb(255, 136, 0),
       0 0 10px rgb(255, 136, 0),
@@ -481,7 +482,7 @@ body {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%) translateY(clamp(5rem, 30vw + 1rem, 20rem)); /* Orbit radius */
+    transform: translateX(-50%); /* Orbit radius */
     font-size: 1.5rem;
     opacity: 0;
     animation: fadein 1.5s forwards;
@@ -489,7 +490,6 @@ body {
     background-repeat: no-repeat;
     width: clamp(1rem, 10vw + 1rem, 7.5rem);
     height: clamp(5rem, 10vw + 1rem, 7.5rem);
-    cursor: pointer;
   }
   
   .orbit2 { animation-delay: 1s; }
@@ -519,7 +519,7 @@ body {
 
   @keyframes fadein {
     0% { opacity: 0; }
-    100% { opacity: 0.5; }
+    100% { opacity: 0.5; transform: translateY(clamp(5rem, 30vw + 1rem, 20rem));}
   }
 
   .orbit1 span {background-image: url(../assets/img/javascript-original.svg); transition: transform 1s ease;}
@@ -550,4 +550,5 @@ body {
     transform: translate(-50%, -50%);
     z-index: -1;
     mix-blend-mode: screen;
+    transition: background 0.5s ease-in-out;
   }
