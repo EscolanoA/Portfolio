@@ -18,6 +18,7 @@ body {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .pcnavbar {
@@ -499,6 +500,7 @@ html {
     background-repeat: no-repeat;
     width: clamp(1rem, 10vw + 1rem, 7.5rem);
     height: clamp(5rem, 10vw + 1rem, 7.5rem);
+    overflow-x: hidden;
   }
   
   .orbit2 { animation-delay: 1s; }
@@ -571,8 +573,13 @@ html {
   }
 
   .githublogo, .linkedinlogo {
-    margin: clamp(0.25rem, 0.5vh, 0.5rem) clamp(0.5rem, 0.75vw, 1rem);
+    margin: clamp(0.125rem, 0.25vh, 0.25rem) clamp(0.25rem, 0.5vw, 0.75rem);
     width: clamp(0.375rem, 1.5vw + 0.1rem, 1.5rem);
     height: clamp(0.375rem, 1.5vw + 0.1rem, 1.5rem);
-    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
   }
+
+  .githublogo {background-image: url(../assets/img/github.png);}
+  .linkedinlogo {background-image: url(../assets/img/linkedin.png);}
