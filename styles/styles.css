@@ -103,7 +103,8 @@ html {
 }
 
 .pcnavbar .right a {
-    margin: clamp(0.25rem, 0.5vh, 0.5rem) clamp(0.5rem, 0.75vw, 1rem);
+    /*margin: clamp(0.25rem, 0.5vh, 0.5rem) clamp(0.5rem, 0.75vw, 1rem);*/
+    margin-left: clamp(0.25rem, 0.5vw, 0.75rem);
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -567,4 +568,11 @@ html {
     opacity: 0;
     width: 0;
     height: 0;
+  }
+
+  .githublogo, .linkedinlogo {
+    margin: clamp(0.25rem, 0.5vh, 0.5rem) clamp(0.5rem, 0.75vw, 1rem);
+    width: clamp(0.375rem, 1.5vw + 0.1rem, 1.5rem);
+    height: clamp(0.375rem, 1.5vw + 0.1rem, 1.5rem);
+    background-color: white;
   }
