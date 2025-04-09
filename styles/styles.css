@@ -13,10 +13,16 @@ body {
     height: 10000px;
     background-color: rgb(0, 0, 0);
     font-family: 'Chakra Petch', sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .pcnavbar {
-    background-color: rgba(134, 134, 134, 0);
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: rgb(255, 136, 0);
     transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
     display: flex;
     align-items: center;
@@ -143,6 +149,7 @@ body {
 
     .mobilenavbar {
         background-color: rgb(0, 0, 0);
+        border-bottom: rgb(255, 136, 0);
         transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
         display: flex;
         align-items: center;
@@ -260,6 +267,7 @@ body {
 
     .mobilenavbar.extended {
         background-color: rgb(255,255,255);
+        border-bottom: white;
     }
 
     .extendframe {
@@ -482,7 +490,7 @@ body {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%); /* Orbit radius */
+    transform: translateX(-50%);
     font-size: 1.5rem;
     opacity: 0;
     animation: fadein 1.5s forwards;
@@ -531,7 +539,9 @@ body {
   .orbit7 span {background-image: url(../assets/img/lua-original.svg); transition: transform 1s ease;}
   .orbit8 span {background-image: url(../assets/img/python-original-wordmark.svg); transition: transform 1s ease;}
   .orbit9 span {background-image: url(../assets/img/php-original.svg); transition: transform 1s ease;}
-  .orbit10 span {background-image: url(../assets/img/sqldeveloper-original.svg); transition: transform 1s ease;}
+  .orbit10 span {background-image: url(../assets/img/sqldeveloper-original.svg); transition: transform 1s ease;}*/
+  
+
 
   .flashlight {
     position: fixed;
@@ -551,4 +561,10 @@ body {
     z-index: -1;
     mix-blend-mode: screen;
     transition: background 0.5s ease-in-out;
+  }
+
+  .accueilhref {
+    opacity: 0;
+    width: 0;
+    height: 0;
   }
