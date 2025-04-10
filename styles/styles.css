@@ -25,7 +25,8 @@ html {
     background-color: rgba(0, 0, 0, 0);
     border-bottom: rgb(255, 136, 0);
     transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: space-between;
     font-size: clamp(0.375rem, 1.5vw + 0.1rem, 1.5rem);
@@ -567,28 +568,6 @@ html {
   .orbit8 span {background-image: url(../assets/img/python-original-wordmark.svg); transition: transform 1s ease;}
   .orbit9 span {background-image: url(../assets/img/php-original.svg); transition: transform 1s ease;}
   .orbit10 span {background-image: url(../assets/img/sqldeveloper-original.svg); transition: transform 1s ease;}*/
-  
-
-
-  .flashlight {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: clamp(10rem, 10vw + 10rem, 50rem);
-    height: clamp(10rem, 10vw + 10rem, 50rem);
-    border-radius: 50%;
-    pointer-events: none;
-    background: radial-gradient(
-      circle closest-side, 
-      rgba(255, 136, 0, 0.1) 0%,
-      rgba(255, 136, 0, 0.05) 60%,
-      rgba(0, 0, 0, 0.6) 100%
-    );
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    mix-blend-mode: screen;
-    transition: background 0.5s ease-in-out;
-  }
 
   .accueilhref {
     opacity: 0;

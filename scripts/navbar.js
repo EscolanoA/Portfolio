@@ -73,3 +73,24 @@ menubutton.addEventListener('click', () => {
         extendframebottom.classList.add("show")
     }
 })
+
+document.querySelectorAll('.mobilealink').forEach(el => {
+    el.addEventListener('click', event => {
+        mobilenavbar.classList.remove('extended')
+
+        menubutton.classList.remove("spinOpen")
+        menubutton.classList.add("spinClose")
+
+        menubutton.classList.add("open")
+        menubutton.classList.remove("close")
+
+        extendframe.classList.remove("extended")
+
+        extendframecenter.classList.remove("show")
+        extendframebottom.classList.remove("show")
+
+        extendframetop.style.display ="none"
+        extendframecenter.style.display ="none"
+        extendframebottom.style.display ="none"
+    })
+  })
