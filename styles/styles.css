@@ -29,6 +29,7 @@ html {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: space-between;
+    justify-items: center;
     font-size: clamp(0.375rem, 1.5vw + 0.1rem, 1.5rem);
     position: fixed;
     width: 100%;
