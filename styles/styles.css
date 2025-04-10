@@ -587,3 +587,24 @@ html {
 
   .githublogo {background-image: url(../assets/img/github.png);}
   .linkedinlogo {background-image: url(../assets/img/linkedin.png);}
+
+  .apropos {
+    transform: translateY(-10vh);
+  }
+
+  .aproposframe {
+    height: 90vh;
+    width: 100%;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+  }
