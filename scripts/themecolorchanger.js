@@ -37,6 +37,10 @@ function recolorelements() {
       if (styles.borderBottomColor === targetColor) {
         el.style.borderBottomColor = newColor;
       }
+
+      if (styles.backgroundColor === targetColor & el != colorbuttonorange & el != colorbuttonblue & el != colorbuttongreen & el != colorbuttonpurple) {
+        el.style.backgroundColor = newColor;
+      }
     });
 }
 
