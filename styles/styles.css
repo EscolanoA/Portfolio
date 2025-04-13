@@ -607,7 +607,7 @@ html {
   .linkedinlogo {background-image: url(../assets/img/linkedin.png);}
 
   .apropos {
-    transform: translateY(-10vh);
+    transform: translateY(-20vh);
   }
 
   .aproposframe {
