@@ -406,6 +406,10 @@ html {
     .aproposframemobile .aproposcontent .aproposimg {
         height: clamp(200px, 200px + 20vw, 500px);
     }
+
+    .maintitleframe {
+        height: 101svh !important;
+    }
 }
 
 .maintitleframe {
