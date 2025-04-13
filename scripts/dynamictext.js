@@ -1,8 +1,8 @@
 let ageplaceholder = document.getElementById("age")
 
-function getAge(birthdate) {
+function setAge(birthdate) {
     const today = new Date();
-    const birth = new Date(birthdate);
+    const birth = new Date(2003, 4, 30);
     
     let age = today.getFullYear() - birth.getFullYear();
     const m = today.getMonth() - birth.getMonth();
@@ -15,4 +15,4 @@ function getAge(birthdate) {
     return age;
   }
 
-  ageplaceholder.innerHTML = getAge("2003-05-30")
+  ageplaceholder.innerHTML = setAge()
