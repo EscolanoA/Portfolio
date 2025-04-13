@@ -414,8 +414,7 @@ html {
 
 .maintitleframe {
     width: 100%;
-    /*height: clamp(1000px, 101svh, 101svh);*/
-    height: 101svh;
+    height: clamp(1000px, 101svh, 101svh);
     display: flex;
     flex-direction: column;
     justify-content: center;
