@@ -157,7 +157,7 @@ html {
     }
 
     .mobilenavbar {
-        background-color: rgba(0, 0, 0, 0);
+        background-color: #131316;
         border-bottom: rgb(255, 136, 0);
         transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
         display: flex;
@@ -770,6 +770,35 @@ html {
 
   .projetframe.hovered {
     transform: scale(1.1);
+  }
+
+  .projet3, .projet4 {
+    display: none;
+  }
+
+  .expandarrow {
+    display: flex;
+    margin: auto;
+    height: clamp(25px, 5vw, 75px);
+    width: clamp(25px, 5vw, 75px);
+    margin-top: 5vh;
+    cursor: pointer;
+    background-image: url(../assets/img/expandarrow.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .expandarrow:hover {
+    transform: scale(1.2) translateY(10px);
+  }
+
+  .expandarrow.off {
+    filter: invert(0.5);
+    cursor:default;
+    transform: none;
   }
 
 

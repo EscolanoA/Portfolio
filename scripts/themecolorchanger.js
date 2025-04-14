@@ -5,43 +5,21 @@ let colorbuttonpurple = document.getElementById("colorbuttonpurple")
 
 function recolorelements() {
     let newColor = window.getComputedStyle(event.target).backgroundColor
-    let targetColor = window.getComputedStyle(document.getElementById("animatedtext")).color
-    const allElements = document.querySelectorAll('*');
-  
-    let newColorRgb = newColor.match(/\d+/g).join(', ');
-  
-    const flashlight = document.querySelector('.flashlight');
-    
-    if (flashlight) {
-      flashlight.style.background = `radial-gradient(
-        circle closest-side, 
-        rgba(${newColorRgb}, 0.1) 0%,
-        rgba(${newColorRgb}, 0.05) 60%,
-        rgba(0, 0, 0, 0.6) 100%
-      )`;
-    }
-  
-    allElements.forEach(el => {
-      const styles = window.getComputedStyle(el);
-      const textShadow = styles.textShadow;
-  
-      if (textShadow.includes(targetColor)) {
-        const newShadow = textShadow.replaceAll(targetColor, newColor);
-        el.style.textShadow = newShadow;
-      }
-  
-      if (styles.color === targetColor) {
-        el.style.color = newColor;
-      }
 
-      if (styles.borderBottomColor === targetColor) {
-        el.style.borderBottomColor = newColor;
-      }
-
-      if (styles.backgroundColor === targetColor & el != colorbuttonorange & el != colorbuttonblue & el != colorbuttongreen & el != colorbuttonpurple) {
-        el.style.backgroundColor = newColor;
-      }
-    });
+    document.querySelector(".pcnavbar").style.borderBottomColor = newColor
+    document.querySelector(".mobilenavbar").style.borderBottomColor = newColor
+    document.querySelector(".animatedtext").style.color = newColor
+    document.querySelector(".animatedtext").style.textShadow = `
+    0 0 5px ${newColor},
+    0 0 10px ${newColor},
+    0 0 20px ${newColor},
+    0 0 40px ${newColor},
+    0 0 80px ${newColor}
+    `;
+    document.querySelector(".apropostitleseparator").style.backgroundColor = newColor
+    document.querySelectorAll(".projetstitleseparator").forEach((el) => {
+      el.style.backgroundColor = newColor
+    })
 }
 
 colorbuttonorange.addEventListener('click',recolorelements)
