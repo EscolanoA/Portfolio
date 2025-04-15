@@ -801,6 +801,82 @@ html {
     transform: none;
   }
 
+  .techstackframe {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .techstacktitle {
+    font-size: clamp(1rem, 3vw + 0.7rem, 4rem);
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-bottom: 5px;
+  }
+
+  .techstacktitle::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: rgb(255, 136, 0);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: borderAnimation 5s infinite ease-in-out;
+  }
+
+  @keyframes borderAnimation {
+    0% {
+        transform: scaleX(0);
+        opacity: 1;
+        transform-origin: left;
+      }
+      25% {
+        transform: scaleX(1);
+        opacity: 1;
+        transform-origin: left;
+      }
+      25.01% {
+        transform: scaleX(1);
+        opacity: 1;
+        transform-origin: right;
+      }
+      50% {
+        transform: scaleX(0);
+        opacity: 1;
+        transform-origin: right;
+      }
+      75% {
+        transform: scaleX(1);
+        opacity: 1;
+        transform-origin: right;
+      }
+      75.01% {
+        transform: scaleX(1);
+        opacity: 1;
+        transform-origin: left;
+      }
+      100% {
+        transform: scaleX(0);
+        opacity: 1;
+        transform-origin: left;
+      }
+  }
+
+  .techbadge {
+    width: clamp(50px, 10vw, 100px);
+    height: clamp(50px, 10vw, 100px);
+  }
+
+  .techbadgejs {
+    background-image: url(../assets/badges/javascript-original.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
 
 

@@ -16,7 +16,9 @@ function recolorelements() {
     0 0 40px ${newColor},
     0 0 80px ${newColor}
     `;
-    document.querySelector(".apropostitleseparator").style.backgroundColor = newColor
+    document.querySelectorAll(".apropostitleseparator").forEach((el) => {
+      el.style.backgroundColor = newColor
+    })
     document.querySelectorAll(".projetstitleseparator").forEach((el) => {
       el.style.backgroundColor = newColor
     })
