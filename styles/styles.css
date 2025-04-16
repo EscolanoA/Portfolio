@@ -815,83 +815,125 @@ html {
     padding-bottom: 5px;
   }
 
-  .techstacktitle::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
-    background: rgb(255, 136, 0);
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: borderAnimation 5s infinite ease-in-out;
+  .techsframe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
-  @keyframes borderAnimation {
-    0% {
-        transform: scaleX(0);
-        opacity: 1;
-        transform-origin: left;
-      }
-      25% {
-        transform: scaleX(1);
-        opacity: 1;
-        transform-origin: left;
-      }
-      25.01% {
-        transform: scaleX(1);
-        opacity: 1;
-        transform-origin: right;
-      }
-      50% {
-        transform: scaleX(0);
-        opacity: 1;
-        transform-origin: right;
-      }
-      75% {
-        transform: scaleX(1);
-        opacity: 1;
-        transform-origin: right;
-      }
-      75.01% {
-        transform: scaleX(1);
-        opacity: 1;
-        transform-origin: left;
-      }
-      100% {
-        transform: scaleX(0);
-        opacity: 1;
-        transform-origin: left;
-      }
+  .techexpertise {
+    height: 5px;
+    background-color: #2b2b35;
+    width: 100%; /* We'll override this in the animation */
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .techexpertise::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background-color: white;
+    left: 0;
+    top: 0;
+    transition: width 1s ease-out;
+  }
+
+  .techframe {
+    width: clamp(50px, 10vw, 100px);
+    margin: 10px;
   }
 
   .techbadge {
     width: clamp(50px, 10vw, 100px);
     height: clamp(50px, 10vw, 100px);
-  }
-
-  .techbadgejs {
-    background-image: url(../assets/badges/javascript-original.svg);
+    cursor: pointer;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
   }
+  .techbadge.animate {
+    animation: spin3D 1s cubic-bezier(.14,.85,0,.99);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  @keyframes spin3D {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(1800deg); /* 360 * 5 */
+    }
+  }
 
-
-
-
-
-
-  .hidden {
+  .techtext {
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    font-size: clamp(0.4rem, 1.5vw, 1.1rem);
     opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s;
   }
+  .techtext.animate {
+    animation: slideUp 1s ease-out forwards;
+  }
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(3px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-  .show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-  }
+.techbadgejs {background-image: url(../assets/badges/javascript-original.svg);}
+.techbadgecss {background-image: url(../assets/badges/css3-original.svg);}
+.techbadgehtml {background-image: url(../assets/badges/html5-original.svg);}
+.techbadgephp {background-image: url(../assets/badges/php-original.svg);}
+.techbadgecsharp {background-image: url(../assets/badges/csharp-original.svg);}
+.techbadgelua {background-image: url(../assets/badges/lua-original.svg);}
+.techbadgesql {background-image: url(../assets/badges/sqldeveloper-original.svg);}
+.techbadgejava {background-image: url(../assets/badges/java-original.svg);}
+.techbadgepython {background-image: url(../assets/badges/python-original.svg);}
+.techbadgec {background-image: url(../assets/badges/c-original.svg);}
+.techbadgenodejs {background-image: url(../assets/badges/nodejs-original.svg);}
+.techbadgevuejs {background-image: url(../assets/badges/vuejs-original.svg);}
+.techbadgenet {background-image: url(../assets/badges/dot-net-original.svg);}
+.techbadgeeasymodbus {background-image: url(../assets/badges/easymodbus.jpg);}
+.techbadgebootstrap {background-image: url(../assets/badges/bootstrap-original.svg);}
+.techbadgereact {background-image: url(../assets/badges/react-original.svg);}
+.techbadgeangularjs {background-image: url(../assets/badges/angularjs-original.svg);}
+
+.techexpertisejs.animate::before, .techexpertisecss.animate::before, .techexpertisehtml.animate::before, .techexpertisephp.animate::before, .techexpertisecsharp.animate::before
+, .techexpertiselua.animate::before, .techexpertisesql.animate::before, .techexpertisenodejs.animate::before, .techexpertisevuejs.animate::before, .techexpertisenet.animate::before
+, .techexpertiseeasymodbus.animate::before, .techexpertisebootstrap.animate::before {
+  width: 90%;
+}
+
+.techexpertisejava.animate::before, .techexpertisepython.animate::before, .techexpertisec.animate::before, .techexpertisereact.animate::before {
+  width: 60%;
+}
+
+.techexpertiseangularjs.animate::before {
+  width: 35%;
+}
+
+
+
+
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
