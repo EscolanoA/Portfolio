@@ -1,8 +1,6 @@
-const ageplaceholder = document.getElementById("age");
-
 function setAge() {
   const today = new Date();
-  const birth = new Date(2003, 4, 30);
+  const birth = new Date(2003, 4, 30); // May 30, 2003
 
   let age = today.getFullYear() - birth.getFullYear();
   const m = today.getMonth() - birth.getMonth();
@@ -14,6 +12,8 @@ function setAge() {
   return age;
 }
 
-//ageplaceholder.textContent = setAge();
-
-ageplaceholder.textContent = new Date(2003,4,30)
+// Wait until DOM is ready
+window.addEventListener('DOMContentLoaded', () => {
+  const ageplaceholder = document.getElementById('age');
+  ageplaceholder.textContent = setAge();
+})
