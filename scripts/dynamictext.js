@@ -14,4 +14,6 @@ function setAge() {
   return age;
 }
 
-ageplaceholder.textContent = setAge();
+//ageplaceholder.textContent = setAge();
+
+ageplaceholder.textContent = new Date(2003,4,30)
