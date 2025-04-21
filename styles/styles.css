@@ -953,6 +953,10 @@ html {
   transform: scaleX(-1);
 }
 
+.autres {
+  transform: translateY(-20vh);
+}
+
 
 
 
