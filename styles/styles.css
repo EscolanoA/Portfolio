@@ -957,6 +957,39 @@ html {
   transform: translateY(-20vh);
 }
 
+.autresframe {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.autresproject {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.autresprojectimage {
+  width: 50% ;
+  aspect-ratio: 1/1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.autresprojectdescription {
+  color: rgb(200,200,200);
+  font-size: clamp(0.5rem, 1vw + 0.4rem, 1.5rem);
+  text-align: center;
+}
+
+.autresprojectimage1 {
+  background-image: url(../assets/img/templeteamlogo.png);
+}
+
 
 
 

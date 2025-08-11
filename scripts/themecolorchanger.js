@@ -22,7 +22,10 @@ function recolorelements() {
     document.querySelectorAll(".projetstitleseparator").forEach((el) => {
       el.style.backgroundColor = newColor
     })
-}
+    document.querySelectorAll(".autrestitleseparator .svgpath").forEach((path) => {
+      path.style.stroke = newColor;
+    });
+} 
 
 colorbuttonorange.addEventListener('click',recolorelements)
 colorbuttonblue.addEventListener('click',recolorelements)
