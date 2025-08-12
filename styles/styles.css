@@ -999,83 +999,13 @@ html {
   transition: opacity 0.5s, visibility 0.5s;
 }
 
-/* Fade out the other project when either is hovered */
-.autresframe:has(.autresproject:first-child:hover) .autresproject:last-child,
-.autresframe:has(.autresproject:last-child:hover) .autresproject:first-child {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.5s, visibility 0.5s;
-}
-
-/* Hover effect for first item */
-.autresproject:first-child:hover ~ .autresproject {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-.autresproject:first-child:hover {
-  z-index: 2;
-}
-
-/* Hover effect for second item */
-.autresproject:last-child:hover ~ .autresproject {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-.autresproject:last-child:hover {
-  z-index: 2;
-}
-.autresframe:hover .autresproject:first-child:hover {
-  ~ .autresproject {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
-.autresframe:hover .autresproject:last-child:hover {
-  ~ .autresproject {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
-
-.autresframe:has(.autresproject:first-child:hover) {
-  grid-template-columns: 1fr 0fr;
-}
-.autresframe:has(.autresproject:last-child:hover) {
-  grid-template-columns: 0fr 1fr;
-}
-
-/* Center hovered item and shrink the other */
-.autresframe:has(.autresproject:hover) {
-  grid-template-columns: 1fr;
-  justify-items: center;
-}
-
-.autresframe:has(.autresproject:hover) .autresproject:hover {
-  justify-self: center;
-}
-
-.autresframe:has(.autresproject:hover) .autresproject:not(:hover) {
-  opacity: 0;
-  width: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition:
-    opacity 0.5s cubic-bezier(.74,.08,.4,1.04),
-    width 0.5s cubic-bezier(.74,.08,.4,1.04),
-    visibility 0.5s cubic-bezier(.74,.08,.4,1.04);
-}
-
 .autresprojectimage {
   width: 50% ;
   aspect-ratio: 1/1;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
 }
 
 .autresprojectdescription {
@@ -1088,7 +1018,7 @@ html {
   background-image: url(../assets/img/templeteamlogo.png);
 }
 .autresprojectimage2 {
-  background-image: url(../assets/img/musicimage.jpg);
+  background-image: url(../assets/img/musicimage.png);
 }
 
 .autrestitletext {
@@ -1101,6 +1031,40 @@ html {
     margin-bottom: 50px;
 }
 
+/* If the left project is expanded, it takes all space */
+.autresframe:has(.autresproject.expanded:first-child) {
+  grid-template-columns: 1fr 0fr;
+}
+
+/* If the right project is expanded, it takes all space */
+.autresframe:has(.autresproject.expanded:last-child) {
+  grid-template-columns: 0fr 1fr;
+}
+
+/* Expanded item takes the whole grid space and is centered */
+.autresproject.expanded {
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+  justify-self: center;
+  transition:
+    width 0.5s cubic-bezier(.74,.08,.4,1.04),
+    opacity 0.5s cubic-bezier(.74,.08,.4,1.04),
+    visibility 0.5s cubic-bezier(.74,.08,.4,1.04),
+    justify-self 0.5s cubic-bezier(.74,.08,.4,1.04);
+}
+
+/* Shrunk item disappears and takes no space */
+.autresproject.shrunk {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    width 0.5s cubic-bezier(.74,.08,.4,1.04),
+    opacity 0.5s cubic-bezier(.74,.08,.4,1.04),
+    visibility 0.5s cubic-bezier(.74,.08,.4,1.04);
+}
 
 
 
