@@ -741,6 +741,9 @@ html {
     height: clamp(10px, 50vw + 10px, 560px);
     border-radius: clamp(8px, 2vw, 16px);
     cursor: pointer;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .projettext {
@@ -750,18 +753,14 @@ html {
     margin-top: clamp(5px, 2vw, 10px);
   }
 
-  .projetimagetheepisodes {
-    background-image: url(../assets/img/theepisodesthumbnail.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
+  .projetimagetheepisodes {background-image: url(../assets/img/theepisodesthumbnail.png);}
+  .projetimagearo {background-image: url(../assets/img/arologo.png);}
 
   .projetframe {
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: clamp(10px, 2vw, 50px);
-    margin-bottom: clamp(10px, 2vw, 50px);
+    margin-top: clamp(10px, 3vw, 50px);
+    margin-bottom: clamp(10px, 3vw, 50px);
     display: flex;
     flex-direction: column;
     align-items: center;
