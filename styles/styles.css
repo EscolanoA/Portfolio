@@ -1091,6 +1091,11 @@ html {
   font-style: italic;
 }
 
+.footerlogo {
+  height: clamp(0.5rem, 1.5vw + 1rem, 5rem) !important;
+  width: clamp(0.5rem, 1.5vw + 1rem, 5rem) !important;
+}
+
 
 .hidden {
   opacity: 0;
