@@ -12,6 +12,18 @@ const words = [
   "un developpeur fullstack."
 ];
 
+const engwords = [
+  "a javascript ninja.",
+  "a CSS pro !",
+  "a big PHP fan...!",
+  "a professional athlete.",
+  "a C# maniac.",
+  "a self-taught musician.",
+  "a back-end developper.",
+  "a front end developper.",
+  "a fullstack developper."
+];
+
 function writedeleteRandomWord(wordList, speed) {
     const word = wordList[Math.floor(Math.random() * wordList.length)];
     let i = 0;
@@ -45,5 +57,9 @@ function writedeleteRandomWord(wordList, speed) {
     typeLoop();
 }
 
-writedeleteRandomWord(words, 150);
+if (window.location.href.includes("index.html")) {
+    writedeleteRandomWord(words, 150);
+} else {
+    writedeleteRandomWord(engwords, 150);
+}
 
