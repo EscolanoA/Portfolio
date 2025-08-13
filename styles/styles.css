@@ -404,7 +404,7 @@ html {
     }
 
     .maintitleframe {
-        height: min(100svh, 100svw) !important;
+        height: max(100svh, 100svw) !important;
     }
 }
 
