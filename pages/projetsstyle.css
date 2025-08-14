@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #131316;
+    font-family: 'Chakra Petch', sans-serif;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.mainframe {
+    background-color: rgba(134, 14, 14, 0.5);
+}
+
+.mainframe {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.frames-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw; /* Will be set by JS */
+  transition: none;
+  will-change: transform;
+}
+
+.frame {
+  flex: 0 0 100vw;
+  height: 100vh;
+  position: relative;
+  transition: none;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.returnbutton {
+    position: absolute;
+    z-index: 99999;
+}
+
+.returnbutton {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin: clamp(1.5rem, 3vh, 2.5rem) clamp(1.5rem, 2.5vw, 2.5rem);
+    font-family: 'Chakra Petch', sans-serif;
+    white-space: nowrap;
+}
+
+.returnbutton::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    color: white(255, 136, 0);
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.returnbutton:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
