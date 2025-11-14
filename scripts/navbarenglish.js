@@ -1,10 +1,10 @@
 function switchTextWithDelay(delay) {
-        let texts = ["BIENVENUE ( 0_0)", "BIENVENUE ( ^_^)", "BIENVENUE ( ^_^) /", "BIENVENUE ( ^_^) |", "BIENVENUE ( ^_^) /", "BIENVENUE ( ^_^)", "BIENVENUE ( 0_0)"];
+        let texts = ["WELCOME ( 0_0)", "WELCOME ( ^_^)", "WELCOME ( ^_^) /", "WELCOME ( ^_^) |", "WELCOME ( ^_^) /", "WELCOME ( ^_^)", "WELCOME ( 0_0)"];
         let pcTextContainer = document.getElementById("pcEmoji")
         let mobileTextContainer = document.getElementById("mobileEmoji")
 
-        pcTextContainer.innerHTML = "BIENVENUE ( 0_0)"
-        mobileTextContainer.innerHTML = "BIENVENUE ( 0_0)"
+        pcTextContainer.innerHTML = "WELCOME ( 0_0)"
+        mobileTextContainer.innerHTML = "WELCOME ( 0_0)"
 
         let index = 0;
 
@@ -13,6 +13,7 @@ function switchTextWithDelay(delay) {
             mobileTextContainer.textContent = texts[index]
             index = (index + 1) % texts.length;
         }, delay);
+    }
     /*let texts = ["BIENVENUE ( 0_0)", "BIENVENUE ( ^_^)", "BIENVENUE ( ^_^) /", "BIENVENUE ( ^_^) |", "BIENVENUE ( ^_^) /", "BIENVENUE ( ^_^)", "BIENVENUE ( 0_0)"];
     let pcTextContainer = document.getElementById("pcEmoji")
     let mobileTextContainer = document.getElementById("mobileEmoji")
@@ -27,7 +28,6 @@ function switchTextWithDelay(delay) {
         mobileTextContainer.textContent = texts[index]
         index = (index + 1) % texts.length;
     }, delay);*/
-}
 
 switchTextWithDelay(500);
 
